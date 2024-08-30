@@ -1,12 +1,31 @@
 public class Ex1 {
-    /**
+    public static long calculateGaussSum(long start, long step, int count) {
+        long sum = 0;
+        for (int i = 0; i < count; i++) {
+            sum += start + i * step;
+        }
+        return sum;
+    }
+
+    public static void main(String[] args) {
+        long start = 81297;
+        long step = 198;
+        int count = 100;
+        long result = calculateGaussSum(start, step, count);
+        System.out.println("The sum is: " + result);
+    }
+}
+
+/*
+public class Ex1 {
+    
      * Calculate the sum of an arithmetic progression.
      *
      * @param start The first term of the progression
      * @param step The common difference between consecutive terms
      * @param count The number of terms to sum
      * @return The sum of the arithmetic progression
-     */
+     
     public static long calculateGaussSum(long start, long step, int count) {
         // TODO: Implement this method to calculate the sum of the arithmetic progression
         // Hint: Use a loop to add up all the terms
@@ -19,3 +38,4 @@ public class Ex1 {
         // Parameters for the problem: start = 81297, step = 198, count = 100
     }
 }
+*/
