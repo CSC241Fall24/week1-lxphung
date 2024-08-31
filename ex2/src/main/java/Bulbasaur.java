@@ -62,6 +62,11 @@ public class Bulbasaur {
     public boolean equals(Object obj) {
         // TODO: Implement this method
         // Compare this Bulbasaur object with another object
+        if (obj instanceof Bulbasaur) {
+            Bulbasaur b = (Bulbasaur)obj;
+            if (id == b.getID() & level == b.getLevel())
+                return true;
+        }
         return false; // Placeholder return value
     }
 
