@@ -15,9 +15,9 @@ public class Bulbasaur {
         // Update the level
         // If the new level is 16 or higher but less than 32, evolve to Ivysaur
         // If the new level is 32 or higher, evolve to Venusaur
-        if (lv > 16 && lv < 32)
+        if (lv >= 16 && lv <= 31)
             id = 2;
-        else if (lv > 32)
+        else if (lv >= 32)
             id = 3;
         
         level = lv;
@@ -64,8 +64,7 @@ public class Bulbasaur {
         // Compare this Bulbasaur object with another object
         if (obj instanceof Bulbasaur) {
             Bulbasaur b = (Bulbasaur)obj;
-            if (id == b.getID() & level == b.getLevel())
-                return true;
+            return this.level == b.getLevel() && this.id == b.getID();
         }
         return false; // Placeholder return value
     }
@@ -78,5 +77,19 @@ public class Bulbasaur {
         newBulbasaur.setLevel(level);
 
         return newBulbasaur; // Placeholder return value
+    }
+
+    public static void main(String [] args) {
+        Bulbasaur b = new Bulbasaur();
+        b.setLevel(32);
+        System.out.println(b.getID());
+        System.out.println(b.getName());
+        System.out.println(b);
+        Bulbasaur b2 = new Bulbasaur();
+        b2.setLevel(31);
+        System.out.println(b.equals(b2));
+
+        Bulbasaur b3 = b2.copy();
+        System.out.println(b3);
     }
 }
